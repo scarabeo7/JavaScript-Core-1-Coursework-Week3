@@ -23,7 +23,21 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-
+  let passwordCheck = passwords.map((pass, index, array) => {
+    if (
+      pass.length >= 5 &&
+      /[A-Z]/.test(pass) &&
+      /[a-z]/.test(pass) &&
+      /[0-9]/.test(pass) &&
+      /[!#$%.*&]/.test(pass) &&
+      array.indexOf(pass) === index
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  return passwordCheck
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
