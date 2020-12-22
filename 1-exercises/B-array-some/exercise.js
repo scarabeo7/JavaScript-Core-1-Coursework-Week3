@@ -6,16 +6,25 @@
   - Do not edit any of the existing code
 */
 
-var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
+const pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
-// If there is a null value in the array exit the program with the error code
-// https://nodejs.org/api/process.html#process_process_exit_code
-// process.exit(1);
+const checkNull = (arr) => arr === null;
+console.log(pairsByIndex.some(checkNull));
 
-var students = ["Islam", "Lesley", "Harun", "Rukmini"];
-var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
+if (pairsByIndex.some(checkNull) === true){
+  process.exit(1);
+}else{
+  return [student, mentor];
+};
 
-var pairs = pairsByIndex.map(function (indexes) {
+  // If there is a null value in the array exit the program with the error code
+  // https://nodejs.org/api/process.html#process_process_exit_code
+  // process.exit(1);
+
+const students = ["Islam", "Lesley", "Harun", "Rukmini"];
+const mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
+
+const pairs = pairsByIndex.map(function (indexes) {
   var student = students[indexes[0]];
   var mentor = mentors[indexes[1]];
   return [student, mentor];
