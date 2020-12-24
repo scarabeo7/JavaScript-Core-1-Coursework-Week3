@@ -9,6 +9,7 @@
 const pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
 const checkNull = (arr) => arr === null;
+
 console.log(pairsByIndex.some(checkNull));
 
 if (pairsByIndex.some(checkNull) === true){

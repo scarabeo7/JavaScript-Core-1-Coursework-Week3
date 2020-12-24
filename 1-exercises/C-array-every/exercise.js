@@ -5,7 +5,7 @@
 const students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 const group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-const isStudent = (element) => element in students;
+const isStudent = (element => element in students);
 const groupIsOnlyStudents = group.every(isStudent); // complete this statement
 
 if (groupIsOnlyStudents) {
