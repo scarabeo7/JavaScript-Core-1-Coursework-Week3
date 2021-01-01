@@ -6,21 +6,30 @@
   - Do not edit any of the existing code
 */
 
-var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
+var pairsByIndexRaw = [
+    [0, 3],
+    [1, 2],
+    [2, 1], null, [1], false, "whoops"
+];
 
-function checkArrayNotInPairs(element){
-  return element === Array.isArray && element.length === 2;
-}
-var pairsByIndex = pairsByIndexRaw.filter(checkArrayNotInPairs); // Complete this statement
-console.log(pairsByIndex);
+// Solution option 1
+var pairsByIndex = pairsByIndexRaw.filter(item => {
+    return Array.isArray(item) && item.length === 2;
+});
+
+// // Solution Option 2
+// function checkArrayNotInPairs(element) {
+//     return Array.isArray(element) && element.length === 2;
+// }
+// var pairsByIndex = pairsByIndexRaw.filter(checkArrayNotInPairs);
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 
-var pairs = pairsByIndex.map(function (indexes) {
-  var student = students[indexes[0]];
-  var mentor = mentors[indexes[1]];
-  return [student, mentor];
+var pairs = pairsByIndex.map(function(indexes) {
+    var student = students[indexes[0]];
+    var mentor = mentors[indexes[1]];
+    return [student, mentor];
 });
 
 console.log(pairs);
