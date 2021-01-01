@@ -9,18 +9,36 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-function checkConditions(num){
-  if (num % 5 === 0 && num % 3 === 0) {
-    return console.log(`FizzBuzz`);
-  } else if (num % 5 === 0) {
-    return console.log(`Buzz`);
-  } else if (num % 3 === 0) {
-    return console.log(`Fizz`);
-  } else {
-    return console.log(num);
-  }
-}
+function checkConditions(num) {
+    switch (true) {
+        case (num % 5 === 0 && num % 3 === 0):
+            console.log(`FizzBuzz`);
+            break;
+        case (num % 5 === 0):
+            console.log(`Buzz`);
+            break;
+        case (num % 3 === 0):
+            console.log(`Fizz`);
+            break;
+        default:
+            console.log(num);
+    }
+};
 arr.forEach(checkConditions);
+
+// function checkConditions(num) {
+//     if (num % 5 === 0 && num % 3 === 0) {
+//         return console.log(`FizzBuzz`);
+//     } else if (num % 5 === 0) {
+
+//         return console.log(`Buzz`);
+//     } else if (num % 3 === 0) {
+//         return console.log(`Fizz`);
+//     } else {
+//         return console.log(num);
+//     }
+// }
+// arr.forEach(checkConditions);
 
 /* EXPECTED OUTPUT */
 
